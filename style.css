@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    background-color: rgb(189, 118, 255);
+  }
+  
+  h1 {
+    color: #ffffff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5em; 
+  }
+  
+  input {
+    padding: 5px; 
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: rgb(1, 247, 255);
+    color: rgb(189, 118, 255);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color:rgb(236, 236, 236);
+  }
+  .container{
+    border: 3px solid rgb(1, 247, 255);
+    border-radius: 5px;
+    margin: 25px 35%;
+  }
+  
+  #mensaje {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  p {
+    color: #ffffff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2em;
+  }
+  
+  #intento {
+    color: #ffffff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  }
+  footer a{
+    text-decoration: none;
+    color: white;
+  }
+  footer a:hover{
+    color: rgb(1, 247, 255);
+  }
+  footer p{
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  
