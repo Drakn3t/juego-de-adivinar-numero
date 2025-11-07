@@ -6,22 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Juego de adivinar el número</title>
+    <title>Juego de adivinar el número - 4 Jugadores</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Adivina el número</h1>
-        <p>Introduce un número entre 1 y 100:</p>
-        <input type="number" id="numeroEntrada">
-        <button onclick="verificarResultado()">Comprobar</button>
-        <button onclick="reiniciarResultado()">Reiniciar</button>
-        <p id="mensaje">A jugar!</p>
-        <p id="intento"></p>
+<div class="container">
+    <h1>🎮 Adivina el Número - 4 Jugadores</h1>
+    
+    <!-- Pantalla de configuración -->
+    <div class="setup-screen active">
+        <p style="text-align: center; margin-bottom: 20px;">Registra los nombres de los 4 jugadores:</p>
+        <div class="player-inputs">
+            <div class="player-input">
+                <label>🎯 Jugador 1:</label>
+                <input type="text" id="player1" placeholder="Nombre del jugador 1">
+            </div>
+            <div class="player-input">
+                <label>🎯 Jugador 2:</label>
+                <input type="text" id="player2" placeholder="Nombre del jugador 2">
+            </div>
+            <div class="player-input">
+                <label>🎯 Jugador 3:</label>
+                <input type="text" id="player3" placeholder="Nombre del jugador 3">
+            </div>
+            <div class="player-input">
+                <label>🎯 Jugador 4:</label>
+                <input type="text" id="player4" placeholder="Nombre del jugador 4">
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button onclick="iniciarJuego()">Comenzar Juego</button>
+        </div>
     </div>
-    <footer>
-        <p>2024 &copy; <a href="https://github.com/Drakn3t">Drakn3t Inc.</a> todos los derechos reservados</p>
-    </footer>
+    
+    <!-- Pantalla de juego -->
+    <div class="game-screen">
+        <div class="current-player">
+            <h2 id="turnoActual">Turno de: </h2>
+            <p id="intentosActuales">Intentos: 0</p>
+        </div>
+        
+        <p style="text-align: center; margin: 15px 0;">Introduce un número entre 1 y 100:</p>
+        
+        <div class="game-input">
+            <input type="number" id="numeroEntrada" min="1" max="100">
+            <button onclick="verificarResultado()">Comprobar</button>
+        </div>
+        
+        <p id="mensaje">¡A jugar!</p>
+        <p id="intento"></p>
+        
+        <div class="scoreboard">
+            <h3>📊 Tabla de Jugadores</h3>
+            <div id="scoreboardContent"></div>
+        </div>
+    </div>
+    
+    <!-- Pantalla de resultados -->
+    <div class="results-screen">
+        <div class="winner-announcement">
+            <div class="trophy">🏆</div>
+            <h2 id="winnerName">¡Ganador!</h2>
+            <p id="winnerStats" style="font-size: 20px; margin-top: 10px;"></p>
+        </div>
+        
+        <div class="final-scores">
+            <h3 style="text-align: center; margin-bottom: 15px;">Clasificación Final</h3>
+            <div id="finalScoresContent"></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="reiniciarJuego()">Jugar de Nuevo</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>2024 &copy; <a href="https://github.com/Drakn3t">Drakn3t Inc.</a> todos los derechos reservados</p>
+</footer>
 
     <script src="script.js"></script>
 </body>

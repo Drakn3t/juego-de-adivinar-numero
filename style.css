@@ -1,63 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e100ff 0%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
     text-align: center;
-    background-color: rgb(189, 118, 255);
-  }
-  
-  h1 {
-    color: #ffffff;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2.5em; 
-  }
-  
-  input {
-    padding: 5px; 
+    color: #e100ff;
+    margin-bottom: 20px;
+}
+
+.setup-screen, .game-screen, .results-screen {
+    display: none;
+}
+
+.setup-screen.active, .game-screen.active, .results-screen.active {
+    display: block;
+}
+
+.player-inputs {
+    margin: 20px 0;
+}
+
+.player-input {
+    margin: 10px 0;
+}
+
+.player-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.player-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     font-size: 16px;
-  }
-  
-  button {
-    padding: 8px 12px;
-    background-color: rgb(1, 247, 255);
-    color: rgb(189, 118, 255);
+}
+
+.player-input input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    background: linear-gradient(135deg, #e100ff 0%, #000000 100%);
+    color: white;
     border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-  }
-  button:hover{
-    background-color:rgb(236, 236, 236);
-  }
-  .container{
-    border: 3px solid rgb(1, 247, 255);
-    border-radius: 5px;
-    margin: 25px 35%;
-  }
-  
-  #mensaje {
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    margin-top: 20px;
-  }
+    margin: 5px;
+    transition: background 0.3s;
+}
 
-  p {
-    color: #ffffff;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.2em;
-  }
-  
-  #intento {
-    color: #ffffff;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-  }
-  footer a{
-    text-decoration: none;
+button:hover {
+    background: linear-gradient(135deg, #5dff8e 0%, #000000 100%);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.current-player {
+    background: #ffd93d;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.current-player h2 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.game-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.game-input input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+#mensaje {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    background: #f0f0f0;
+}
+
+#intento {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.scoreboard {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.scoreboard h3 {
+    color: #e100ff;
+    margin-bottom: 10px;
+}
+
+.score-item {
+    padding: 8px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-item.completed {
+    background: #d4edda;
+}
+
+.winner-announcement {
+    background: linear-gradient(135deg, #ffd93d 0%, #ffaa00 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.winner-announcement h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.winner-announcement .trophy {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+.final-scores {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.final-score-item {
+    padding: 12px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.final-score-item.winner {
+    background: #ffd93d;
+    font-weight: bold;
+    border: 3px solid #ffaa00;
+}
+
+.medal {
+    font-size: 24px;
+}
+
+footer {
     color: white;
-  }
-  footer a:hover{
-    color: rgb(1, 247, 255);
-  }
-  footer p{
-    font-size: 1em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: #ffd93d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: black;
+}
